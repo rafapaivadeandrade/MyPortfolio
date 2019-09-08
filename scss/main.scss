@@ -3,11 +3,10 @@ $secondary-color: #eece1a;
 $showHomeImage: true;
 $homeImage: url(../img/work-background.jpg);
 $backgroundOpacity: 0.9;
-
 @mixin easeOut{
- transition: all 1.5s ease-out
-}
-@mixin background {
+    transition: all 1.5s ease-out
+   }
+   @mixin background {
     @if $showHomeImage{
         background: $homeImage;
         background-attachment: fixed;
@@ -24,9 +23,9 @@ $backgroundOpacity: 0.9;
         z-index: -1;
         background: rgba($color: $primary-color, $alpha:$backgroundOpacity);
         }
-    }
-    
+    }  
 }
+@import '_menu.scss';
 
 *{
     box-sizing: border-box;
