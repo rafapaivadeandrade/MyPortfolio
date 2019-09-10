@@ -37,7 +37,7 @@
 }
 
 .menu {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   opacity: 0.5;
@@ -66,6 +66,7 @@
   width: 50%;
   height: 100vh;
   overflow: hidden;
+  z-index: 3 !important;
 }
 
 .menu-nav {
@@ -77,11 +78,13 @@
           transform: translate3d(0, -100%, 0);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+  z-index: 3 !important;
 }
 
 .menu-nav.show {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  position: relative;
 }
 
 .menu-branding {
@@ -103,6 +106,7 @@
   height: 250px;
   border-radius: 50%;
   border: solid 3px #eece1a;
+  z-index: 3;
 }
 
 .menu .nav-item {
@@ -157,6 +161,50 @@
           transition-delay: 0.4s;
 }
 
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menu-nav.show, div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .menu-nav {
+    height: 75vh;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu-branding {
+    height: 25vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .menu-branding .portrait {
+    background: url("../img/profile3small.jpg");
+    width: 150px;
+    height: 150px;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -204,14 +252,8 @@ h2.sm-heading {
   background: rgba(73, 73, 73, 0.5);
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
 header {
   position: fixed;
-  z-index: 2;
   width: 100%;
 }
 
@@ -230,12 +272,17 @@ main .icons {
 
 main .icons a {
   padding: 0.4rem;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 main .icons a:hover {
-  color: #eece1a;
+  cursor: pointer;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+  color: #eece1a;
 }
 
 main#home {
