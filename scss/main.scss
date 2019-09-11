@@ -8,9 +8,7 @@ $backgroundOpacity: 0.9;
 @mixin easeOut{
     transition: all 0.5s ease-out
    }
-@mixin hoverOut {
-    transition: all 0.5s ease-out
-}
+
    @mixin background {
     @if $showHomeImage{
         background: $homeImage;
@@ -43,14 +41,17 @@ height: 100%;
 margin: 0;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 line-height: 1.5;
-@include background();
-  
+
+}
+body#backgroundImage{
+    @include background();
 }
 //Headings
 h1,
 h2{
     margin: 0;
     font-weight: 400;
+    
     &.lg-heading{
         font-size: 6rem;
         
@@ -65,9 +66,11 @@ h2{
 header{
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 .text-secondary{
     color: $secondary-color;
+   
 }
 main{
     
@@ -140,6 +143,46 @@ main{
     }
     
 }
+//Work/Projects
+
+    .projects{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 20px;
+        
+        img{
+            width: 100%;
+            border: 3px #fff solid;
+            &:hover{
+                border-color: $secondary-color;
+                opacity: 0.5;
+                @include easeOut();
+            }
+        }
+    }
+.btn{
+    display: block;
+    padding: 0.5rem 0.1rem;
+    margin-bottom: 0.3rem;
+    text-decoration: none;
+    &:hover{
+        background: $secondary-color;      
+    }
+}
+.btn-dark{
+    @extend .btn;
+    background: darken($color: $primary-color, $amount: 50);
+    color: #fff;
+}
+.btn-light{
+    @extend .btn;
+    color: #333;
+    background: lighten($color: $primary-color, $amount: 50);
+}
+
+
+
+//Footer
 #main-footer{
     text-align: center;
     padding: 1rem;

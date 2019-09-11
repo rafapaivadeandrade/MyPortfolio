@@ -37,7 +37,7 @@
 }
 
 .menu {
-  position: relative;
+  position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.5;
@@ -170,12 +170,15 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+}
+
+body#backgroundImage {
   background: url(../img/work-background.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
 
-body:after {
+body#backgroundImage:after {
   content: "";
   position: absolute;
   top: 0;
@@ -208,6 +211,7 @@ h2.sm-heading {
 header {
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .text-secondary {
@@ -302,6 +306,47 @@ main#home h1 {
   width: 50%;
 }
 
+.projects {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.projects img {
+  width: 100%;
+  border: 3px #fff solid;
+}
+
+.projects img:hover {
+  border-color: #eece1a;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 0.1rem;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+}
+
+.btn:hover, .btn-dark:hover, .btn-light:hover {
+  background: #eece1a;
+}
+
+.btn-dark {
+  background: black;
+  color: #fff;
+}
+
+.btn-light {
+  color: #333;
+  background: #c4c4c4;
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -310,6 +355,10 @@ main#home h1 {
 }
 
 @media screen and (max-width: 500px) {
+  .projects {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
   main#home h1 {
     margin-top: 10vh;
   }
@@ -321,7 +370,7 @@ main#home h1 {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    min-height: calc(260vh - 60px);
+    min-height: calc(290vh - 60px);
   }
   main .lg-heading {
     line-height: 1;
@@ -360,6 +409,24 @@ main#home h1 {
   body:after {
     content: "";
     height: 290%;
+  }
+  .projects {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
   }
 }
 /*# sourceMappingURL=main.css.map */
