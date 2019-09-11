@@ -211,7 +211,7 @@ h2.sm-heading {
 header {
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 0;
 }
 
 .text-secondary {
@@ -347,6 +347,39 @@ main#home h1 {
   background: #c4c4c4;
 }
 
+.contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.contact-info div {
+  font-size: 2rem;
+  border: 3px white solid;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-info div:hover {
+  padding: 0.5rem 1.5rem;
+  background-color: #eece1a;
+}
+
+.contact-info div:hover span {
+  color: #444;
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -356,8 +389,8 @@ main#home h1 {
 
 @media screen and (max-width: 500px) {
   .projects {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
   }
   main#home h1 {
     margin-top: 10vh;
