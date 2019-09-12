@@ -1,0 +1,78 @@
+@mixin mediaSmall{
+    @media screen and (max-width:500px){
+        .projects{
+            grid-template-columns: repeat(1,1fr);
+        }
+        main#home h1{
+            margin-top: 10vh;
+        }
+    }
+}
+@mixin mediaMedium{
+    @media screen  and (max-width:678px){
+        main{
+            align-items: center;
+            text-align: center;
+            min-height: calc(290vh - 60px);
+            .lg-heading{
+                
+                line-height: 1;
+                margin-bottom: 1rem;
+            }
+        }
+        ul.menu-nav,div.menu-branding{
+            float: none;
+            width: 100%;
+            min-height: 0;
+
+            &.show{
+                transform: translate3d(0,0,0);
+            }
+        }
+        .menu-nav{
+            height: 75vh;
+            transform: translate3d(-100%,0,0);
+            font-size: 24px;
+        }
+        .menu-branding{
+            height: 25vh;
+            transform: translate3d(100%,0,0);
+            .portrait{
+                background: url('../img/profile3small.jpg');
+                width: 150px;
+                height: 150px;
+            }
+        }
+        .about-info{
+            grid-template-areas: 
+            'bioimage'
+            'bio';
+            grid-template-columns: 1fr;
+        }
+        body{
+            &:after{
+                content: "";
+                height: 290%;
+            }
+        }
+        .projects{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@mixin mediaLarge{
+    @media screen and (min-width:769px) and (max-width:1170px){
+        .projects{
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    }
+}
+@mixin mediaXlarge{
+    @media screen and (min-width:1171px){
+        .projects{
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+    }
+}
