@@ -1,17 +1,26 @@
 {
   "name": "websiteportfolio",
   "version": "1.0.0",
-  "description": "portfolio",
+  "description": "My Portfolio Website",
   "main": "index.js",
   "homepage": "https://rafapaivadeandrade.github.io/portfolio",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -to index.html"
-  },
-  "author": "Rafael",
-  "license": "ISC",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafapaivadeandrade/portfolio.git"
+  },
+  "author": "Rafael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafapaivadeandrade/portfolio/issues"
+  },
+  "homepage": "https://github.com/rafapaivadeandrade/portfolio#readme"
 }
